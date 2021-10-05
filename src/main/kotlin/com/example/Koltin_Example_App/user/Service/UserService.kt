@@ -19,8 +19,8 @@ class UserService(private  val userRepository: UserRepository) {
     val key = "user"
     val mapper = jacksonObjectMapper()
 
-    @Value("\${spring.redis.ttl}")
-    val testkey: Long = 0;
+    //@Value("\${spring.redis.ttl}")
+    val testkey: Long = 3600;
 
     @Resource
     private lateinit var redisUtil: RedisUtil
@@ -38,7 +38,7 @@ class UserService(private  val userRepository: UserRepository) {
     }
 
     fun findById(userId: Long): ResponseEntity<UserEntity> {
-        var redisResult = redisUtil.hget(key, userId.toString())
+        val redisResult = redisUtil.hget(key, userId.toString())
         if (redisResult != null) {
             val result = mapper.readValue(redisResult.toString(), UserEntity::class.java)
             return ResponseEntity.ok(result)

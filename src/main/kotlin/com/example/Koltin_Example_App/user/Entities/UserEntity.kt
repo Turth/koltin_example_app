@@ -4,9 +4,9 @@ import kotlinx.serialization.Serializable
 import javax.persistence.*
 import javax.validation.constraints.NotBlank
 
-@Serializable
+
 @Entity
-@Table(name = "user")
+@Table(name = "UserTest")
 data class UserEntity (
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

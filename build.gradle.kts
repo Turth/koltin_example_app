@@ -29,6 +29,7 @@ dependencies {
 	implementation("org.postgresql:postgresql:42.2.23")
 	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
 	implementation("net.devh:grpc-server-spring-boot-starter:2.12.0.RELEASE")
+	implementation("org.jetbrains.kotlinx:kotlinx-serialization-core-jvm:1.0.1")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
